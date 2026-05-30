@@ -5,11 +5,11 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <link rel="stylesheet" href="{{ asset('libraries/bootstrap-5.3.8-dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-        <script src="{{ asset('libraries/bootstrap-5.3.8-dist/js/bootstrap.min.js') }}"></script>
         {% endblock %}
 
         {% set frankenphpHotReload = app.request.server.get('FRANKENPHP_HOT_RELOAD') %}
@@ -19,7 +19,79 @@
         <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path('app_report_generate') }}">MK SEO Tool</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Przełącz nawigację">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link{% if app.request.attributes.get('_route') == 'app_report_generate' %} active{% endif %}"{% if app.request.attributes.get('_route') == 'app_report_generate' %} aria-current="page"{% endif %} href="{{ path('app_report_generate') }}">Strona główna</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Raporty
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ path('app_report_generate') }}">Generuj raport</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Historia raportów</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Narzędzia
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Analiza słów kluczowych</a></li>
+                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Audyt techniczny</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container flex-grow-1 py-4">
         {% block body %}{% endblock %}
+    </main>
+    <footer class="site-footer bg-primary text-white mt-auto">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="site-footer__brand mb-3">MK SEO Tool</h5>
+                    <p class="site-footer__text mb-0">
+                        Narzędzie do analizy SEO — raporty, audyty i wsparcie w optymalizacji widoczności w wyszukiwarkach.
+                    </p>
+                </div>
+                <div class="col-6 col-md-4">
+                    <h6 class="site-footer__heading mb-3">Nawigacja</h6>
+                    <ul class="list-unstyled site-footer__links mb-0">
+                        <li><a href="{{ path('app_report_generate') }}">Strona główna</a></li>
+                        <li><a href="{{ path('app_report_generate') }}">Generuj raport</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4">
+                    <h6 class="site-footer__heading mb-3">Narzędzia</h6>
+                    <ul class="list-unstyled site-footer__links mb-0">
+                        <li><span class="site-footer__muted">Analiza słów kluczowych</span></li>
+                        <li><span class="site-footer__muted">Audyt techniczny</span></li>
+                        <li><span class="site-footer__muted">Historia raportów</span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="site-footer__divider my-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <small class="site-footer__copy mb-0">&copy; {{ "now"|date("Y") }} MK SEO Tool. Wszelkie prawa zastrzeżone.</small>
+                <small class="site-footer__muted mb-0">Wersja 1.0</small>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ asset('libraries/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js') }}"></script>
+    {% block javascripts_bottom %}{% endblock %}
     </body>
 </html>

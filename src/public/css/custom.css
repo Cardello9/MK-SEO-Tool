@@ -1,0 +1,61 @@
+.bg-primary {
+    background-color: #2F2FE4;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+.bg-secondary {
+    background-color: #162E93 !important;
+}
+.bg-secondary a {
+    color: white;
+}
+
+.dropdown-item:active,
+.dropdown-item:hover a {
+    color: #2F2FE4;
+}
+
+.site-footer__brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.site-footer__heading {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.9;
+}
+.site-footer__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+.site-footer__links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    padding: 0.2rem 0;
+    transition: color 0.15s ease, opacity 0.15s ease;
+}
+.site-footer__links a:hover {
+    color: #fff;
+    opacity: 1;
+}
+.site-footer__links li + li {
+    margin-top: 0.35rem;
+}
+.site-footer__muted {
+    font-size: 0.9rem;
+    opacity: 0.55;
+}
+.site-footer__copy {
+    opacity: 0.8;
+}
+.site-footer__divider {
+    border-color: rgba(255, 255, 255, 0.25);
+    opacity: 1;
+}
