@@ -1,5 +1,5 @@
 .bg-primary {
-    background-color: #2F2FE4;
+    background-color: #2F2FE4 !important;
 }
 
 .navbar-nav .nav-link {
@@ -10,6 +10,10 @@
 }
 .bg-secondary a {
     color: white;
+}
+
+.btn-primary {
+    background-color: #162E93;
 }
 
 .dropdown-item:active,
