@@ -1,13 +1,13 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Generuj raport{% endblock %}
+{% block title %}Generate report{% endblock %}
 
 {% block body %}
-    <h1 class="mb-4">Generuj raport</h1>
+    <h1 class="mb-4">Generate report</h1>
 
     <form method="post" action="{{ path('app_report_generate') }}" class="row g-3">
         <div class="col-12">
-            <label for="url" class="form-label">Adres URL strony</label>
+            <label for="url" class="form-label">Page URL</label>
             <input
                 type="url"
                 class="form-control form-control-lg"
@@ -19,10 +19,10 @@
                 inputmode="url"
                 autocomplete="url"
             >
-            <div class="form-text">Wpisz pełny adres strony do analizy SEO (z protokołem https:// lub http://).</div>
+            <div class="form-text">Enter the full page URL for SEO analysis (including https:// or http://).</div>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-lg">Generuj raport</button>
+            <button type="submit" class="btn btn-primary btn-lg">Generate report</button>
         </div>
     </form>
 {% endblock %}

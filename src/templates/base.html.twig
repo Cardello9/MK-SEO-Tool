@@ -24,31 +24,31 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ path('app_report_generate') }}">MK SEO Tool</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Przełącz nawigację">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link{% if app.request.attributes.get('_route') == 'app_report_generate' %} active{% endif %}"{% if app.request.attributes.get('_route') == 'app_report_generate' %} aria-current="page"{% endif %} href="{{ path('app_report_generate') }}">Strona główna</a>
+                            <a class="nav-link{% if app.request.attributes.get('_route') == 'app_report_generate' %} active{% endif %}"{% if app.request.attributes.get('_route') == 'app_report_generate' %} aria-current="page"{% endif %} href="{{ path('app_report_generate') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Raporty
+                                Reports
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ path('app_report_generate') }}">Generuj raport</a></li>
+                                <li><a class="dropdown-item" href="{{ path('app_report_generate') }}">Generate report</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Historia raportów</a></li>
+                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Report history</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Narzędzia
+                                Tools
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Analiza słów kluczowych</a></li>
-                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Audyt techniczny</a></li>
+                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Keyword analysis</a></li>
+                                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Technical audit</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -65,29 +65,29 @@
                 <div class="col-md-4">
                     <h5 class="site-footer__brand mb-3">MK SEO Tool</h5>
                     <p class="site-footer__text mb-0">
-                        Narzędzie do analizy SEO — raporty, audyty i wsparcie w optymalizacji widoczności w wyszukiwarkach.
+                        SEO analysis tool — reports, audits, and support for optimizing search visibility.
                     </p>
                 </div>
                 <div class="col-6 col-md-4">
-                    <h6 class="site-footer__heading mb-3">Nawigacja</h6>
+                    <h6 class="site-footer__heading mb-3">Navigation</h6>
                     <ul class="list-unstyled site-footer__links mb-0">
-                        <li><a href="{{ path('app_report_generate') }}">Strona główna</a></li>
-                        <li><a href="{{ path('app_report_generate') }}">Generuj raport</a></li>
+                        <li><a href="{{ path('app_report_generate') }}">Home</a></li>
+                        <li><a href="{{ path('app_report_generate') }}">Generate report</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-4">
-                    <h6 class="site-footer__heading mb-3">Narzędzia</h6>
+                    <h6 class="site-footer__heading mb-3">Tools</h6>
                     <ul class="list-unstyled site-footer__links mb-0">
-                        <li><span class="site-footer__muted">Analiza słów kluczowych</span></li>
-                        <li><span class="site-footer__muted">Audyt techniczny</span></li>
-                        <li><span class="site-footer__muted">Historia raportów</span></li>
+                        <li><span class="site-footer__muted">Keyword analysis</span></li>
+                        <li><span class="site-footer__muted">Technical audit</span></li>
+                        <li><span class="site-footer__muted">Report history</span></li>
                     </ul>
                 </div>
             </div>
             <hr class="site-footer__divider my-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-                <small class="site-footer__copy mb-0">&copy; {{ "now"|date("Y") }} MK SEO Tool. Wszelkie prawa zastrzeżone.</small>
-                <small class="site-footer__muted mb-0">Wersja 1.0</small>
+                <small class="site-footer__copy mb-0">&copy; {{ "now"|date("Y") }} MK SEO Tool. All rights reserved.</small>
+                <small class="site-footer__muted mb-0">Version 1.0</small>
             </div>
         </div>
     </footer>
